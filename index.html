@@ -1,13 +1,494 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>Hello world</title>
-  </head>
+	<head>
+		<title>CGS Discord</title>
+		<meta name="google-site-verification" content="cJ8AJ2uQrXAcA1o0YlxgVywKnGmYC_PcIyLWhLIFK68" />
+		<meta property="og:title" content="CGS Discord">
+		<meta property="og:description" content="The website for the CGS Discord">
+		<meta property="og:image" content="https://media.discordapp.net/attachments/826023845323472896/869527909654736896/new-icon-v4.gif">
+		<meta property="og:url" content="https://discord.gg/cqpYnuQHvv">
+		<meta name="CGS Discord" content="The website for the CGS Discord"/>
+		<link rel="icon" href="https://github.com/cgsdiscord/deeds-cord/blob/main/extension/assets/new-icon-v4-circle.png?raw=true">
 
-  <body>
-    <h1>
-      Hello world
-    </h1>
-  </body>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BR1GKNQD8B"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
+		  gtag('config', 'G-BR1GKNQD8B');
+		</script>
+
+		<style>
+			:root {
+				--background: #121212; /* Normally the darkest colour on the page and used in the sidebars */
+
+				--middleground: #1E1E1E; /* This colour is used as the background for the main homepages. */
+				--body-background: #1E1E1E !important; /* Keep this the same as middleground for best results */
+
+				--foreground: #333333; /* This colour is used to contain the news along with other UI elements. */
+
+				--text: white; /* The colour of text */
+
+				--primary: #ED4245; /* Used for dropdown menu's and timetables */
+
+				--secondary: #5865F2; /* Used for buttons */
+			}
+
+
+      /* scrollbar */
+			/* width */
+			::-webkit-scrollbar {
+	  		width: 10px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+	  		background: var(--background);
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+			  background: #888;
+				border-radius: 8px;
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+			  background: #555;
+			}
+			/* Change link colours */
+			a:link {
+				color: var(--secondary);
+				background-color: transparent;
+				text-decoration: none;
+			}
+
+			a:visited {
+				color: var(--secondary);
+				background-color: transparent;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: var(--primary);
+				background-color: transparent;
+			  text-decoration: underline;
+			}
+
+			a:active {
+				color: var(--primary);
+				background-color: transparent;
+				text-decoration: underline;
+			}
+			/* Finish link colour section */
+
+			body {
+				background-color: var(--middleground);
+				color: var(--text);
+				font-family: 'Open Sans', sans-serif;
+				background-image: url("https://github.com/cgsdiscord/deeds-cord/blob/main/extension/assets/starry-sky.gif?raw=true");
+				background-attachment:fixed;
+				background-repeat: no-repeat;
+  			background-size: cover;
+
+			}
+
+			iframe{
+				border-radius: 8px;
+			}
+
+			input{
+				border-radius: 8px;
+				border: none;
+				outline: none;
+				width: 300px;
+				height: 20px;
+			}
+
+
+			button{
+				border-radius: 8px;
+				border: none;
+				height: 20px;
+				margin: 1px;
+			}
+
+			video{
+				border-radius: 8px;
+			}
+
+			.container{
+				border-radius: 8px;
+				padding: 10px;
+				width: 98%;
+				background-color: var(--foreground);
+			}
+
+			.widget{
+				border-radius: 8px;
+			}
+
+			div.center{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+			}
+			/* Navbar CSS */
+			/* Style the navbar */
+			#navbar {
+				background-color: var(--middleground);
+				position: fixed;
+
+				width:auto;
+				top: 0;
+				border-radius: 0px 0px 8px 8px;
+				z-index: 100;
+			}
+
+			/* Navbar links */
+			#navbar a {
+				float: left;
+				display: block;
+				color: var(--text);
+				text-align: center;
+				padding: 14px;
+				text-decoration: none;
+				margin: 6px;
+				padding: 11px;
+			}
+
+			#navbar > a:hover {
+				background-color: var(--secondary);
+				border-radius: 8px;
+			}
+
+			/* Page content */
+			.content {
+				padding: 16px;
+			}
+
+
+			h1, h3{
+				background-color: rgb(0,0,0); /* Fallback color */
+  			background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+				border-radius: 8px;
+				padding: 5px;
+				width: auto;
+				display: inline-block;
+			}
+
+			h4{
+				margin: 3px;
+			}
+
+			#home{
+				float: left;
+			}
+
+			#motd{
+				width: 23%;
+				float: right;
+			}
+
+			audio{
+				width: 320px;
+			}
+
+		</style>
+	</head>
+	<body>
+	<div class="content">
+		<div class="bg-image"></div>
+
+		<!-- Navbar -->
+
+		<h1 id="home">Welcome!</h1>
+		<h3 id="motd">MOTD: <em>Blocked at school :(</em></h3>
+
+		<div class="center">
+			<div id="navbar">
+	  		<a href="#home">Home</a>
+	  		<a href="#proxy">Proxy</a>
+				<a href="#github">Github</a>
+				<a href="#youtube">Youtube</a>
+	  		<a href="#environment">Environment</a>
+			</div>
+		</div>
+
+
+
+
+		<div class="container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/jL4Mc4YVpWU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h4>Official discord invite!</h4>
+			<a href="https://discord.gg/njU6DZJSh6">
+				<img class="widget" src="https://discordapp.com/api/guilds/826023027548225547/widget.png?style=banner2" alt="Discord server invite">
+			</a>
+			<h4>Some nice music to play while you browse <em>(definitely not discord themed)</em></h4>
+			<audio controls autoplay loop>
+	  		<source src="https://github.com/cgsdiscord/deeds-cord/blob/main/extension/assets/Missed-Call-_Discord-Hack-Week-Entry_-Akstrv-_p_.mp3?raw=true" type="audio/mp3">
+	  		Your browser does not support the audio element.
+			</audio>
+			<h4>About:</h4>
+			<p>This website and DEEDS++ is maintained out of our own free will! We offer you these services completely free of charge, if you would
+				like to express your thanks please ping @Developer in the CGS Discord server!
+			</p>
+		</div>
+
+		<!-- CGS Proxy -->
+		<h1 id="proxy">CGS Proxy</h1>
+		<div class="container">
+							<!-- URL proxy -->
+            	<script>
+              function go() {
+              	var input = document.getElementById('url-target');
+                	if (input.value) {
+										var wnd = window.open("https://cgsproxy.herokuapp.com");
+
+    								setTimeout(function() {
+      								wnd.close();
+											window.open('https://cgsproxy.herokuapp.com/main/' + input.value);
+    								}, 3000);
+
+    								return false;
+
+                  }
+									else {
+                  	alert('Please provide a link. It does not require https://.');
+                  }
+              }
+            	</script>
+							<p>By using this proxy you accept that you: <br>
+								- Are responsible for the websites you browse.<br>
+								- Are not viewing NSFW content.<br>
+								- Are not using it for uneducational purposes during lessons.<br>
+								- Are not breaking any school rules.<br>
+							</p>
+            	<h4>Input your URL here: </h4>
+            	<div>
+              	<input type='text' placeholder='https://www.google.com' id='url-target' onkeydown='if(event.key==="Enter") go()' />
+              	<button onclick='go()'>Go!</button>
+            	</div>
+
+							<br>
+
+
+
+							<!-- Google search -->
+							<script>
+							function goGoogle() {
+								var input = document.getElementById('google');
+							  if (input.value) {
+									let stringUrl = "https://www.google.com/search";
+									let url = new URL(stringUrl);
+									let params = url.searchParams;
+									params.append("q", input.value);
+									console.log(url.toString());
+
+									var wnd = window.open("https://cgsproxy.herokuapp.com");
+
+
+									setTimeout(function() {
+										wnd.close();
+										window.open('https://cgsproxy.herokuapp.com/main/' + url.toString());
+									}, 3000);
+
+									return false;
+
+							  }
+
+							}
+						</script>
+						<h4>Search with Google: </h4>
+						<div>
+								<input type='text' placeholder='Define advertisements' id='google' onkeydown='if(event.key==="Enter") goGoogle()' />
+								<button onclick='goGoogle()'>Go!</button>
+						</div>
+						<br>
+
+						<!-- DuckDuckGo search -->
+						<script>
+							function goDuck() {
+									var input = document.getElementById('duckduckgo');
+										if (input.value) {
+											let stringUrl = "https://duckduckgo.com/";
+											let url = new URL(stringUrl);
+											let params = url.searchParams;
+											params.append("q", input.value);
+											console.log(url.toString());
+
+											var wnd = window.open("https://cgsproxy.herokuapp.com");
+
+
+    									setTimeout(function() {
+      									wnd.close();
+												window.open('https://cgsproxy.herokuapp.com/main/' + url.toString());
+    									}, 3000);
+
+    									return false;
+
+										}
+							}
+						</script>
+
+						<h4>Search with DuckDuckGo: </h4>
+						<div>
+								<input type='text' placeholder='Define stonks' id='duckduckgo' onkeydown='if(event.key==="Enter") goDuck()' />
+								<button onclick='goDuck()' >Go!</button>
+						</div>
+						<br>
+
+						<!-- Quick links -->
+						<script>
+						function discord() {
+							var wnd = window.open("https://cgsproxy.herokuapp.com");
+
+
+    					setTimeout(function() {
+								wnd.close();
+								window.open('https://cgsproxy.herokuapp.com/main/https://discord.com/app');
+    					}, 3000);
+
+    					return false;
+
+						}
+						</script>
+
+						<script>
+						function minehut() {
+							var wnd = window.open("https://cgsproxy.herokuapp.com");
+    					setTimeout(function() {
+								wnd.close();
+								window.open('https://cgsproxy.herokuapp.com/main/https://minecraftservers.org/vote/443456');
+    					}, 3000);
+
+    					return false;
+
+						}
+						</script>
+
+						<script>
+						function debug() {
+							var wnd = window.open("https://cgsproxy.herokuapp.com");
+    					setTimeout(function() {
+								wnd.close();
+    					}, 10000);
+
+    					return false;
+
+						}
+						</script>
+
+						<h4>Quick links: </h4>
+						<div>
+							<button onclick='discord()' >Discord app (use at own risk)</button>
+							<button onclick='minehut()' >Vote for minehut (DUMBLEDORE9779)</button>
+							<button onclick='debug()' >Troubleshoot 403 error</button>
+						</div>
+
+						<!-- Troubleshooting section -->
+						<h4>Troubleshooting: </h4>
+						<h5>Proxy not opening:</h5>
+						<video width="40%" muted controls>
+  						<source src="https://github.com/cgsdiscord/deeds-cord/blob/main/extension/assets/troubleshooting-popups.mp4?raw=true" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<h5>403 error:</h5>
+						<video width="40%" muted controls>
+  						<source src="https://github.com/cgsdiscord/deeds-cord/blob/main/extension/assets/troubleshoot-403.mp4?raw=true" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+    </div>
+		<!-- CGS Github -->
+		<h1 id="github">CGS Github</h1>
+		<div class="container">
+			<!-- Shields -->
+			<a href="https://github.com/cgsdiscord/deeds-cord">
+				<img alt="DEEDS++ commit activity" src="https://img.shields.io/github/commit-activity/m/cgsdiscord/deeds-cord?label=DEEDS%2B%2B%20commit%20activity">
+			</a>
+			<a href="https://github.com/cgsdiscord/cgsdiscord.github.io">
+				<img alt="cgsdiscord.github.io commit activity" src="https://img.shields.io/github/commit-activity/m/cgsdiscord/cgsdiscord.github.io?label=cgsdiscord.github.io%20commit%20activity">
+			</a>
+
+			<!-- DEEDS++ -->
+			<a href="https://github.com/cgsdiscord/deeds-cord">
+				<h4>DEEDS++</h4>
+			</a>
+			<p>DEEDS++ is a chromium and quantum (firefox) extension to customize the look and feel of schoolbox (DEEDS). It is free and open source and available for download <a href="https://github.com/cgsdiscord/deeds-cord">here!</a>
+			Even you can become a developer and help the progress of DEEDS++, all you need is a github and discord account!</p>
+
+			<a href="https://github.com/cgsdiscord/cgsdiscord.github.io">
+				<h4>cgsdiscord.github.io</h4>
+			</a>
+			<p>This website is even avaliable to commit to on Github!</p>
+
+			<br>
+		</div>
+
+		<!-- CGS Youtube -->
+		<h1 id="youtube">CGS Youtube</h1>
+		<div class="container">
+			<a alt="Link to CGS Discord Youtube"href="https://www.youtube.com/channel/UCXShdCd7yq9E4NmS0JXXtCg">
+				<img alt="YouTube Channel Views" src="https://img.shields.io/youtube/channel/views/UCXShdCd7yq9E4NmS0JXXtCg?label=CGS%20Discord%20views&style=social">
+				<img alt="YouTube Channel Subscribers" src="https://img.shields.io/youtube/channel/subscribers/UCXShdCd7yq9E4NmS0JXXtCg?label=CGS%20Discord%20subscribers&style=social">
+			</a>
+			<p>CGS Discord also has a YouTube channel for a bunch of useless stuff.. MAKE SURE TO LIKE AND SUBSCRIBE now™ ;)</p>
+			<h4>CGS Proxy video:</h4>
+			<iframe width="400" src="https://www.youtube.com/embed/BTceKTJQz2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h4>DEEDS++ installation tutorial:</h4>
+			<iframe width="400" src="https://www.youtube.com/embed/L2TH9v40pzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		</div>
+		<!-- Climate change -->
+		<h1 id="environment">Climate change</h1>
+		<div class="container">
+			<h2>Projects to save the world:</h2>
+
+			<a href="https://climateclock.world"> <h4>Climate clock</h4> </a>
+			<div class="climateclock">
+				<climate-clock />
+			</div>
+
+			<a href="https://www.ecosia.org/"> <h4>Ecosia</h4> </a>
+			<p>Ecosia is a search engine which dedicates all it's earnings to planting trees, it's servers are solar powered too!</p>
+			<p>Note: Please consider disabling your ad blocker on Ecosia because that is how they plant trees (ad revenue)</p>
+
+			<a href="https://teamseas.org"> <h4>#TeamSeas</h4> </a>
+			<iframe src="https://teamseas.org" title="#TeamSeas" width="500px" height="300px"frameBorder ="0" sandbox="allow-scripts"></iframe>
+
+			<a href="https://teamtrees.org"> <h4>#TeamTrees</h4> </a>
+			<iframe src="https://teamtrees.org" title="#TeamTrees" width="500px" height="300px"frameBorder ="0" sandbox="allow-scripts"></iframe>
+
+			<h4>CGS solar usage</h4>
+			<iframe src="https://display.solaranalytics.com/camberwell" title="CGS solar usage" width="500px" height="300px"frameBorder ="0" sandbox="allow-scripts"></iframe>
+
+		</div>
+	</div> <!-- End content div -->
+
+	<script>
+	window.onscroll = function() {myFunction()};
+
+	var navbar = document.getElementById("navbar");
+	var sticky = navbar.offsetTop;
+
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+	    navbar.classList.add("sticky")
+	  } else {
+	    navbar.classList.remove("sticky");
+	  }
+	}
+	</script>
+
+<script src="https://climateclock.world/widget-v2.js" async></script>
+<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+    new Crate({
+        server: '826023027548225547', // CGS
+        channel: '903174014120386580' // #unverified-chat｜💬
+    })
+</script>
+
+	</body>
 </html>
